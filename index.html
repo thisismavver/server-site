@@ -143,7 +143,28 @@
         const age = document.getElementById("age").value;
         const role = document.getElementById("role").value;
         const comment = document.getElementById("comment").value;
+        if (!name || name.length < 3 || !/^[а-яА-ЯёЁ]+$/.test(name)) {
+                alert("Имя должно содержать не менее 3-х символов и быть на русском языке.");
+                return; // Остановка функции
+            }
 
+            // Проверка никнейма/Discord
+            if (!nickname || nickname.length < 5) {
+                alert("Никнейм и Discord должны содержать не менее 5 символов.");
+                return; // Остановка функции
+            }
+
+            // Проверка возраста
+            if (!age || isNaN(age)) {
+                alert("Возраст должен быть числом и не может быть пустым.");
+                return; // Остановка функции
+            }
+
+            // Проверка комментария
+            if (!comment || comment.length < 20) {
+                alert("Биография должна содержать не менее 20 символов.");
+                return; // Остановка функции
+            }
         // Создание объекта с данными
         const data = {
             name: name,
