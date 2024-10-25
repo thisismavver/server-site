@@ -137,15 +137,15 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     let tg = window.Telegram.WebApp;
-    function send () {
+    function send() {
         let data = {
-            name: document.getElementById("name").value
-            nickname_discord: document.getElementById("label-nickname").value
-            telegram_data: document.getElementById("telegram").value
-            age: document.getElementById("age").value
+            name: document.getElementById("name").value,
+            nickname_discord: document.getElementById("label-nickname").value,
+            telegram_data: document.getElementById("telegram").value,
+            age: document.getElementById("age").value,
             staj: document.getElementById("role").value
         }
-        console.log("True")
+        console.log("True");
         tg.sendData(JSON.stringify(data));
     }
 </script>
