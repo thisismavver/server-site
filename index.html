@@ -150,6 +150,7 @@
         const name = document.getElementById("name").value;
         const nickname = document.getElementById("label-nickname").value;
         const discord = document.getElementById("input-discord").value;
+        console.log(discord)
         const age = document.getElementById("age").value;
         const role = document.getElementById("role").value;
         const comment = document.getElementById("comment").value;
@@ -179,6 +180,12 @@
                 alert("Биография должна содержать не менее 20 символов.");
                 return; // Остановка функции
             }
+        console.log(name)
+        console.log(nickname)
+        console.log(discord)
+        console.log(age)
+        console.log(role)
+        console.log(comment)
         // Создание объекта с данными
         const data = {
             name: name,
