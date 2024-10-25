@@ -5,12 +5,13 @@
     <title>Anketa</title>
 </head>
 <body>
-    <p id="asd">asdasdasd</p>
+    <input type="text" placeholder="user_id" id="user_id">
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        document.getElementById("asd").innerText = tg.initDataUnsafe.first_name
+        document.getElementById("user_id").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+
     </script>
 </body>
 </html>
