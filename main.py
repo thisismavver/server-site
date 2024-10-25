@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 from telebot.types import WebAppInfo
+import json
 
 API_TOKEN = '7790139740:AAHdVIGjirvYWR50eTKV6uYOhenAVPm9AcQ'  # Замените YOUR_API_TOKEN на ваш токен
 
@@ -25,8 +26,22 @@ def echo_all(message):
 
 @bot.message_handler(content_types=['web_app_data'])
 def web_app(message: types.Message):
-    a = message.web_app_data.data
-    bot.reply_to(message, a)
+    js = json.loads(message.web_app_data.data)
+    name = js['name']
+    nick = js['nickname']
+    discord = js['discord']
+    age = js['age']
+    staj = js['role']
+    comment = js['comment']
+    msg = f"""
+Вы успешно отправили анкету со следующими данными:\n\n
+Ваше имя, возраст: {name} | {age}
+Ваш никнейм, Дискорд: {nick} | {discord}
+Стаж игры: {staj}
+Биография: {comment}
+
+Дожидайтесь ответа администратора! Обычно, он поступает быстрее: 3х часов"""
+    bot.reply_to(message, msg)
 
 
 if __name__ == '__main__':

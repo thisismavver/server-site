@@ -89,12 +89,21 @@
 
         <div class="form-control">
             <label for="nickname" id="label-nick">
-                Никнейм, Discord
+                Никнейм
             </label>
 
             <!-- Input Type Email-->
             <input type="nickname" id="label-nickname"
-                   placeholder="Введите ваш никнейм и Discord. ex: mavver / mavver#9359" />
+                   placeholder="Введите ваш никнейм. ex: mavver" />
+        </div>
+        <div class="form-control">
+            <label for="discord" id="label-discord">
+                Discord
+            </label>
+
+            <!-- Input Type Email-->
+            <input type="discord" id="input-discord"
+                   placeholder="Введите ваш Discord. ex: mavver#9359" />
         </div>
         <div class="form-control">
             <label for="age" id="label-age">
@@ -140,6 +149,7 @@
     function send() {
         const name = document.getElementById("name").value;
         const nickname = document.getElementById("label-nickname").value;
+        const discord = document.getElementById("label-discord").value;
         const age = document.getElementById("age").value;
         const role = document.getElementById("role").value;
         const comment = document.getElementById("comment").value;
@@ -151,6 +161,10 @@
             // Проверка никнейма/Discord
             if (!nickname || nickname.length < 5) {
                 alert("Никнейм и Discord должны содержать не менее 5 символов.");
+                return; // Остановка функции
+            }
+            if (!discord || discord.length < 3) {
+                alert("Никнейм и Discord должны содержать не менее 3 символов.");
                 return; // Остановка функции
             }
 
@@ -168,7 +182,8 @@
         // Создание объекта с данными
         const data = {
             name: name,
-            nickname_discord: nickname,
+            nickname: nickname,
+            discord: discord,
             age: age,
             role: role,
             comment: comment
@@ -176,5 +191,6 @@
         console.log("True");
         tg.sendData(JSON.stringify(data));
     }
+
 </script>
 </html>
