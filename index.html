@@ -138,13 +138,20 @@
 <script>
     let tg = window.Telegram.WebApp;
     function send() {
-        let data = {
-            name: document.getElementById("name").value,
-            nickname_discord: document.getElementById("label-nickname").value,
-            telegram_data: document.getElementById("telegram").value,
-            age: document.getElementById("age").value,
-            staj: document.getElementById("role").value
-        }
+        const name = document.getElementById("name").value;
+        const nickname = document.getElementById("label-nickname").value;
+        const age = document.getElementById("age").value;
+        const role = document.getElementById("role").value;
+        const comment = document.getElementById("comment").value;
+
+        // Создание объекта с данными
+        const data = {
+            name: name,
+            nickname_discord: nickname,
+            age: age,
+            role: role,
+            comment: comment
+        };
         console.log("True");
         tg.sendData(JSON.stringify(data));
     }
