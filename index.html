@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anketa</title>
+</head>
+<body>
+    <p id="asd">asdasdasd</p>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        document.getElementById("asd").innerText = tg.initDataUnsafe.user_id
+    </script>
+</body>
+</html>
