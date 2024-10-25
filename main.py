@@ -26,6 +26,7 @@ def echo_all(message):
 
 @bot.message_handler(content_types=['web_app_data'])
 def web_app(message: types.Message):
+    id = message.chat.id
     js = json.loads(message.web_app_data.data)
     name = js['name']
     nick = js['nickname']
@@ -34,14 +35,14 @@ def web_app(message: types.Message):
     staj = js['role']
     comment = js['comment']
     msg = f"""
-Вы успешно отправили анкету со следующими данными:\n\n
+✅️ Вы успешно отправили анкету со следующими данными:\n```
 Ваше имя, возраст: {name} | {age}
 Ваш никнейм, Дискорд: {nick} | {discord}
 Стаж игры: {staj}
-Биография: {comment}
+Биография: {comment}```
 
-Дожидайтесь ответа администратора! Обычно, он поступает быстрее: 3х часов"""
-    bot.reply_to(message, msg)
+*Дожидайтесь ответа администратора\\! Обычно, он поступает быстрее: 3х часов*"""
+    bot.send_message(id, msg, parse_mode="MarkdownV2")
 
 
 if __name__ == '__main__':
