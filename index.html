@@ -106,7 +106,7 @@
 
         <div class="form-control">
             <label for="tg_id" id="telegram_id">
-                Telegram ID (заполняется автоматически)
+                Telegram Данные (заполняется автоматически)
             </label>
             <input type="text" id="telegram" readonly="disabled"
                    placeholder="" />
@@ -152,7 +152,7 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
         let tg = window.Telegram.WebApp;
-        document.getElementById("telegram").value = tg.initDataUnsafe.user.id;
+        document.getElementById("telegram").value = tg.initDataUnsafe.user.id + " " + tg.initDataUnsafe.user.first_name + "||" + tg.initDataUnsafe.user.last_name;
 
     </script>
 
