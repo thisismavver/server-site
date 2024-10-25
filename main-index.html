@@ -151,9 +151,23 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-        let tg = window.Telegram.WebApp;
-        document.getElementById("telegram").value = tg.initDataUnsafe.user.id + " " + tg.initDataUnsafe.user.first_name + "||" + tg.initDataUnsafe.user.last_name;
+    let tg = window.Telegram.WebApp;
+    document.getElementById("telegram").value = tg.initDataUnsafe.user.id + " " + tg.initDataUnsafe.user.first_name + "||" + tg.initDataUnsafe.user.last_name;
 
-    </script>
+    order.addEventListener("click", () => {
+        let data = {
+            name: document.getElementById("name").value
+            nickname_discord: document.getElementById("label-nickname").value
+            telegram_data: document.getElementById("telegram").value
+            age: document.getElementById("age").value
+            staj: document.getElementById("role").value
+            bio: document.getElementById("comment").value
+        }
+        tg.sendData(JSON.stringify(data));
+    }
+
+
+
+</script>
 
 </html>

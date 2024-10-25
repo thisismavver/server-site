@@ -103,14 +103,6 @@
             <input type="nickname" id="label-nickname"
                    placeholder="Введите ваш никнейм и Discord. ex: mavver / mavver#9359" />
         </div>
-
-        <div class="form-control">
-            <label for="tg_id" id="telegram_id">
-                Telegram Данные (заполняется автоматически)
-            </label>
-            <input type="text" id="telegram" readonly="disabled"
-                   placeholder="" />
-        </div>
         <div class="form-control">
             <label for="age" id="label-age">
                 Возраст
@@ -151,9 +143,17 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-        let tg = window.Telegram.WebApp;
-        document.getElementById("telegram").value = tg.initDataUnsafe.user.id + " " + tg.initDataUnsafe.user.first_name + "||" + tg.initDataUnsafe.user.last_name;
+    let tg = window.Telegram.WebApp;
 
-    </script>
-
+    order.addEventListener("click", () => {
+        let data = {
+            name: document.getElementById("name").value
+            nickname_discord: document.getElementById("label-nickname").value
+            telegram_data: document.getElementById("telegram").value
+            age: document.getElementById("age").value
+            staj: document.getElementById("role").value
+        }
+        tg.sendData(JSON.stringify(data));
+    }
+</script>
 </html>
