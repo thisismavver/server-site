@@ -25,7 +25,7 @@ def echo_all(message):
 
 @bot.message_handler(content_types=['web_app_data'])
 def web_app(message: types.Message):
-    a = message.web_app_data
+    a = message.web_app_data.data
     bot.reply_to(message, a)
 
 

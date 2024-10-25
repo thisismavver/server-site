@@ -135,7 +135,7 @@
         </div>
 
         <!-- Multi-line Text Input Control -->
-        <button type="submit" value="submit">
+        <button type="submit" value="submit" onclick="send()">
             Отправить анкету
         </button>
     </form>
@@ -144,8 +144,7 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     let tg = window.Telegram.WebApp;
-
-    order.addEventListener("click", () => {
+    function send () {
         let data = {
             name: document.getElementById("name").value
             nickname_discord: document.getElementById("label-nickname").value
