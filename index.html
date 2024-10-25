@@ -7,22 +7,36 @@
           content="IE=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>
-        Reverse - анкетирование
-    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <h1>Reverse - анкета</h1>
+    <h2>Введеные данные сохраняются и передаются в анонимизированном, защищенном виде.</h2>
 
     <style>
+
+        h1 {
+            font-family: 'Exo 2', sans-serif; /* Choose your desired font */
+            font-size: 67px; /* Adjust font size as needed */
+            color: #FFFFFF
+        }
+
+        h2 {
+            font-famile: 'Exo 2', sans-serif;
+            font-size: 20px;
+            opacity: 50%;
+            color: #FFFFFF;
+        }
+
         /* Styling the Body element
         i.e. Color, Font, Alignment */
         body {
-            background-color: #FFBCAD;
+            background-color: #283618;
             font-family: Verdana;
             text-align: center;
         }
 
         /* Styling the Form (Color, Padding, Shadow) */
         form {
-            background-color: #fff;
+            background-color: #606c38;
             max-width: 500px;
             margin: 50px auto;
             padding: 30px 20px;
@@ -47,8 +61,8 @@
         .form-control select,
         .form-control textarea {
             border: 1px solid #777;
-            border-radius: 2px;
-            font-family: inherit;
+            border-radius: 5px;
+            font-family: "Exo 2", sans-serif;
             padding: 10px;
             display: block;
             width: 95%;
@@ -57,21 +71,31 @@
 
         /* Styling Button */
         button {
-            background-color: #FFBCAD;
+            background-color: #677b29;
             border: 1px solid #777;
             border-radius: 15px;
-            font-family: inherit;
+            font-family: "Exo 2", sans-serif;
             font-size: 25px;
+            color:white;
             display: block;
             width: 100%;
             margin-top: 50px;
             margin-bottom: 20px;
+            padding: 20px 0;
+        }
+        label {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 22px;
+            color: #FFFFFF
+        }
+        input, textarea, select {
+            background-color: #fefae0; /* Set the background color */
+            color: #333; /* Set the text color */
         }
     </style>
 </head>
 
 <body>
-    <h1>Reverse - Анкета</h1>
 
     <!-- Create Form -->
     <form id="form">
@@ -138,7 +162,7 @@
 
         <!-- Multi-line Text Input Control -->
         <button type="button" value="submit" onclick="send()">
-            Отправить анкету
+            Подтвердить
         </button>
     </form>
 </body>
